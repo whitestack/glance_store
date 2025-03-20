@@ -519,7 +519,7 @@ class Store(glance_store.driver.Store):
             endpoint_url=endpoint_url,
             region_name=region_name,
             use_ssl=(loc.scheme == 's3+https'),
-            verify=None if store_cacert == '' else store_cacert,
+            verify=False if store_cacert == '' else store_cacert,
             config=config)
 
     def _operation_set(self, loc):
